@@ -1,0 +1,203 @@
+.container {
+    height: 100%;
+    background: #FCF4EB;
+}
+
+.row {
+    padding-top: 5%;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card_01 {
+    /* background: red; */
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    height: 300px;
+    margin: 40px;
+}
+
+.card_02 {
+    /* background: red; */
+    position: relative;
+    flex: 1;
+    max-width: 710px;
+    height: 400px;
+    margin: 40px;
+}
+
+.get_in {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 68px;
+    line-height: 85px;
+}
+
+.touch {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 65px;
+}
+
+.contact-para {
+    margin-top: 20px;
+    width: 590px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 38px;
+
+    letter-spacing: 0.2px;
+    color: #252B42;
+}
+
+.contact_inputs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.contact_input {
+    margin-left: 25px;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1px;
+
+    color: #2B2D42;
+}
+
+#input_1 {
+    width: 308px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D2D6DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+#input_2 {
+    width: 318px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D2D6DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+#input_3 {
+    width: 663px;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D2D6DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.contect_input_textarea {
+    margin-left: 25px;
+    margin-top: 30px;
+    justify-content: space-around;
+    font-family: 'Nunito', sans-serif;
+}
+
+#input_4 {
+    width: 663px;
+    height: 106px;
+    background: #FFFFFF;
+    border: 1px solid #D2D6DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+input[type='text'],
+textarea {
+    font-family: 'Nunito', sans-serif;
+    padding: .5em 1em;
+}
+
+#contact-btn {
+
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Nunito Bold', sans-serif;
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 663px;
+    height: 40px;
+    color: #fff;
+
+    background: #E08B32;
+    box-shadow: 0px 4px 7px -1px rgba(0, 0, 0, 0.11), 0px 2px 4px -1px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    border: none;
+}
+
+
+@media(max-width:800px) {
+    .container {
+        height: 900px;
+    }
+
+    .card_01 {
+        flex: 100%;
+        max-width: 200px;
+    }
+
+    .card_02 {
+        flex: 100%;
+        width: 100%;
+        /* max-width: 400px; */
+        /* background-color: red; */
+    }
+
+    .contact-para {
+        width: 300px;
+        margin-left: -50px;
+    }
+
+    #input_1 {
+        width: 150px;
+    }
+
+    #input_2 {
+        width: 150px;
+    }
+
+    #input_3 {
+        width: 100%;
+    }
+
+    #input_4 {
+        width: 100%;
+    }
+
+    #contact-btn {
+        width: 100%;
+    }
+}
+
+.red {
+    margin: 5px;
+    color: red;
+    font-size: 20px;
+}
