@@ -60,7 +60,8 @@
                 </div>
 
             </div>
-            <button id="contact-btn" [disabled]="!contactForm.valid" (click)="submitData(contactForm.value)">SEND
+            <button type="reset" id="contact-btn" [disabled]="!contactForm.valid"
+                (click)="submitData(contactForm.value)">SEND
                 MESSAGE</button>
             <h4 *ngIf="isSubmit">{{sumbitMessage}}</h4>
         </form>
