@@ -22,14 +22,24 @@ export class FormPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.formbuilder.group({
-      name: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
-      lname: [null, Validators.required],
-      // email: [null, [Validators.required, Validators.email]],
+      firstName: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(3)]],
+      lastName: [null, [Validators.required, Validators.pattern('[a-zA-Z ]*'), Validators.minLength(3)]],
       email: ['', Validators.compose([Validators.required, Validators.pattern(this.emailPattern)])],
       message: [null, Validators.required],
     });
   }
-  get f() { return this.contactForm.controls; }
+  get firstName() {
+    return this.contactForm.get('firstName');
+  }
+  get lastName() {
+    return this.contactForm.get('lastName');
+  }
+  get email() {
+    return this.contactForm.get('email');
+  }
+  get message() {
+    return this.contactForm.get('message');
+  }
 
   submitData(e: any) {
     this.submitted = true;

@@ -95,15 +95,6 @@ p {
     border-radius: 8px;
 }
 
-#input_2 {
-    width: 318px;
-    height: 40px;
-    background: #FFFFFF;
-    border: 1px solid #D2D6DA;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
 #input_3 {
     width: 663px;
     height: 40px;
@@ -166,8 +157,6 @@ textarea {
     .card_02 {
         flex: 100%;
         width: 100%;
-        /* max-width: 400px; */
-        /* background-color: red; */
     }
 
     .contact-para {
@@ -199,5 +188,5 @@ textarea {
 .red {
     margin: 5px;
     color: red;
-    font-size: 20px;
+    font-size: 14px;
 }

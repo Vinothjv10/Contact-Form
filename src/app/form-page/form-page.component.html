@@ -5,57 +5,63 @@
             <div class="contact_inputs">
                 <div class="first_name">
                     <p>First Name</p>
-                    <input id="input_1" type="text" placeholder="First Name" formControlName="name">
-                    <!-- <div class="red" *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched">*First
-                        Name is
-                        Required</div> -->
+                    <input id="input_1" type="text" placeholder="First Name" formControlName="firstName">
+                    <div class="red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
 
-                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-                        <div class="red" *ngIf="f.name.errors.required">Name is Required</div>
-                        <div class="red" *ngIf="f.name.errors.pattern">Enter only Alphabet</div>
+                        <div *ngIf="firstName.errors?.['required']">
+                            *First Name is required.
+                        </div>
+                        <div *ngIf="firstName.errors?.['minlength']">
+                            *Fisrt Name must be at least 3 characters
+                        </div>
+                        <div *ngIf="firstName.errors?.['pattern']">
+                            *Enter only Alphabat
+                        </div>
                     </div>
+
                 </div>
                 <div class="last_name">
                     <p>Last Name</p>
-                    <input id="input_2" type="text" placeholder="Last Name" formControlName="lname">
-                    <!-- <div class="red" *ngIf="contactForm.get('lname').invalid && contactForm.get('lname').touched">*Last
-                        Name is
-                        Required</div> -->
-                    <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
-                        <div class="red" *ngIf="f.lname.errors.required">Last Name is Required</div>
-                        <div class="red" *ngIf="f.lname.errors.pattern">Enter only Alphabet</div>
+                    <input id="input_1" type="text" placeholder="Last Name" formControlName="lastName">
+                    <div class="red" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+
+                        <div *ngIf="lastName.errors?.['required']">
+                            *Last Name is required.
+                        </div>
+                        <div *ngIf="lastName.errors?.['minlength']">
+                            *Last Name must be at least 3 characters
+                        </div>
+                        <div *ngIf="lastName.errors?.['pattern']">
+                            *Enter only Alphabat
+                        </div>
                     </div>
+
                 </div>
             </div>
             <div class="contact_input">
                 <p>Email Address</p>
-                <input type="text" id="input_3" placeholder="Email" formControlName="email">
-                <!-- <div class="red" *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched">*Email is
-                    Required
-                </div> -->
-                <div class="red" *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                    <div class="red" *ngIf="f.email.errors.required">Email is Required</div>
-                    <div class="red" *ngIf="f.email.errors.pattern">dfgdf is Required</div>
-
+                <input type="text" id="input_3" formControlName="email" [ngClass]="{ 'is-invalid': email.errors }"
+                    placeholder="example@gmail.com">
+                <div class="red" *ngIf="email.errors">
+                    <div *ngIf="email.errors.pattern">Email is required</div>
+                    <div *ngIf="email.errors.email">Please enter a valid email address</div>
                 </div>
-                <!-- <div class="required"
-                    *ngIf="footerFormControl['email'].touched && footerFormControl['email'].errors?.['pattern']">
-                    Enter a valid email address
-                </div> -->
 
             </div>
             <div class="contect_input_textarea">
                 <p>Your message</p>
                 <textarea id="input_4" placeholder="Enter Your Message" formControlName="message"></textarea>
-                <!-- <div class="red" *ngIf="contactForm.get('message').invalid && contactForm.get('message').touched">
-                    *Message is
-                    Required</div> -->
-                <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
-                    <div class="red" *ngIf="f.message.errors.required">Message is Required</div>
+                <div class="red" *ngIf="message.invalid && (message.dirty || message.touched)">
+
+                    <div *ngIf="message.errors?.['required']">
+                        *Message is required.
+                    </div>
+
                 </div>
 
             </div>
-            <button id="contact-btn" (click)="submitData(contactForm.value)">SEND MESSAGE</button>
+            <button id="contact-btn" [disabled]="!contactForm.valid" (click)="submitData(contactForm.value)">SEND
+                MESSAGE</button>
             <h4 *ngIf="isSubmit">{{sumbitMessage}}</h4>
         </form>
     </div>
