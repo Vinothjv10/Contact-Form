@@ -1,17 +1,3 @@
-.container {
-    height: 100%;
-    background: #FCF4EB;
-}
-
-.row {
-    padding-top: 5%;
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .card_01 {
     /* background: red; */
     position: relative;
@@ -129,18 +115,23 @@ textarea {
 #contact-btn {
 
     font-size: 18px;
-    cursor: pointer;
     font-family: 'Nunito Bold', sans-serif;
     margin-left: 25px;
     margin-top: 30px;
     width: 663px;
     height: 40px;
-    color: #fff;
 
     background: #E08B32;
     box-shadow: 0px 4px 7px -1px rgba(0, 0, 0, 0.11), 0px 2px 4px -1px rgba(0, 0, 0, 0.07);
     border-radius: 8px;
     border: none;
+    color: #fff;
+}
+
+#contact-btn:disabled {
+    opacity: 0.95;
+    cursor: not-allowed;
+    color: #fff;
 }
 
 
@@ -188,5 +179,11 @@ textarea {
 .red {
     margin: 5px;
     color: red;
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.green {
+    margin: 5px;
+    color: green;
+    font-size: 18px;
 }

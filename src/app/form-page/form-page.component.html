@@ -1,69 +1,96 @@
+<style>
+    .container {
+        height: 100%;
+        background: #FCF4EB;
+    }
+
+    .row {
+        padding-top: 5%;
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+</style>
 <div class="container">
     <div class="row">
 
-        <form [formGroup]="contactForm" class="card_02">
+        <form [formGroup]="contactForm" #userPost="ngForm" (ngSubmit)="submitData(userPost.value)" class="card_02">
             <div class="contact_inputs">
                 <div class="first_name">
-                    <p>First Name</p>
+                    <p>First Name<span class="red">*</span></p>
+
                     <input id="input_1" type="text" placeholder="First Name" formControlName="firstName">
                     <div class="red" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
 
                         <div *ngIf="firstName.errors?.['required']">
-                            *First Name is required.
+                            First Name is required
                         </div>
                         <div *ngIf="firstName.errors?.['minlength']">
-                            *Fisrt Name must be at least 3 characters
+                            First Name must be at least 3 characters
                         </div>
                         <div *ngIf="firstName.errors?.['pattern']">
-                            *Enter only Alphabat
+                            Enter only Characters
+                        </div>
+                        <div *ngIf="firstName.errors?.['maxlength']">
+                            First Name must be at max 15 characters
                         </div>
                     </div>
 
                 </div>
                 <div class="last_name">
-                    <p>Last Name</p>
+                    <p>Last Name<span class="red">*</span></p>
                     <input id="input_1" type="text" placeholder="Last Name" formControlName="lastName">
                     <div class="red" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
 
                         <div *ngIf="lastName.errors?.['required']">
-                            *Last Name is required.
+                            Last Name is required
                         </div>
                         <div *ngIf="lastName.errors?.['minlength']">
-                            *Last Name must be at least 3 characters
+                            Last Name must be at least 3 characters
                         </div>
                         <div *ngIf="lastName.errors?.['pattern']">
-                            *Enter only Alphabat
+                            Enter only Characters
+                        </div>
+                        <div *ngIf="lastName.errors?.['maxlength']">
+                            Last Name must be at max 15 characters
                         </div>
                     </div>
 
                 </div>
             </div>
             <div class="contact_input">
-                <p>Email Address</p>
-                <input type="text" id="input_3" formControlName="email" [ngClass]="{ 'is-invalid': email.errors }"
-                    placeholder="example@gmail.com">
-                <div class="red" *ngIf="email.errors">
-                    <div *ngIf="email.errors.pattern">Email is required</div>
+                <p>Email Address <span class="red">*</span></p>
+                <input type="text" id="input_3" formControlName="email" placeholder="example@gmail.com">
+                <div class="red" *ngIf="email.invalid && (email.touched || email.dirty)">
+                    <div *ngIf="email.errors.required">Email is required</div>
+                    <div *ngIf=" email.errors.pattern">Enter valid pattern</div>
                     <div *ngIf="email.errors.email">Please enter a valid email address</div>
                 </div>
 
             </div>
             <div class="contect_input_textarea">
-                <p>Your message</p>
+                <p>Your message <span class="red">*</span></p>
                 <textarea id="input_4" placeholder="Enter Your Message" formControlName="message"></textarea>
-                <div class="red" *ngIf="message.invalid && (message.dirty || message.touched)">
+                <div class="red" *ngIf="message.invalid && (message.touched || message.dirty)">
 
-                    <div *ngIf="message.errors?.['required']">
-                        *Message is required.
+                    <div *ngIf="message.errors?.required">
+                        *Message is required
+                    </div>
+                    <div *ngIf="message.errors?.minlength">
+                        Message must be at least 10 characters
+                    </div>
+                    <div *ngIf="message.errors?.maxlength">
+                        Message must be at max 300 characters
                     </div>
 
                 </div>
 
             </div>
-            <button type="reset" id="contact-btn" [disabled]="!contactForm.valid"
-                (click)="submitData(contactForm.value)">SEND
-                MESSAGE</button>
-            <h4 *ngIf="isSubmit">{{sumbitMessage}}</h4>
+
+            <button mat-button id="contact-btn" [disabled]="contactForm.invalid">SEND MESSAGE</button>
+            <h4 class="green" *ngIf="isSubmit">{{sumbitMessage}}</h4>
         </form>
     </div>
 </div>
