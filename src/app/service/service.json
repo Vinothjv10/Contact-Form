@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "img": "./assets/images/services/product_development.png",
+      "content": "Product Development",
+      "flipped": false
+    },
+    {
+      "id": 2,
+      "img": "./assets/images/services/it_service.png",
+      "content": "IT Service",
+      "flipped": false
+    },
+    {
+      "id": 3,
+      "img": "./assets/images/services/digital_marketing.png",
+      "content": "Digital Marketing",
+      "flipped": false
+    },
+    {
+      "id": 4,
+      "img": "./assets/images/services/digitization.png",
+      "content": "Digitization",
+      "flipped": false
+    },
+    {
+      "id": 5,
+      "img": "./assets/images/services/consultancy.png",
+      "content": "Consultancy",
+      "flipped": false
+    },
+    {
+      "id": 6,
+      "img": "./assets/images/services/self_augmentation.png",
+      "content": "Self Augmentation",
+      "flipped": false
+    }
+  ]
+}

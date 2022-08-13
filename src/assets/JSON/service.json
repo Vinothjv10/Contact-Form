@@ -1,0 +1,37 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "img": "./assets/service_images/product_development.png",
+      "content": "Product Development",
+      "flipped": false
+    },
+    {
+      "id": 2,
+      "img": "./assets/service_images/Computer.png",
+      "content": "IT Service",
+      "flipped": false
+    },
+    {
+      "id": 3,
+      "img": "./assets/service_images/Floor.png",
+      "content": "Digital Marketing",
+      "flipped": false
+    },
+    {
+      "img": "./assets/service_images/Graphic elements.png",
+      "content": "Digitization",
+      "flipped": false
+    },
+    {
+      "img": "./assets/service_images/Phone call.png",
+      "content": "Consultancy",
+      "flipped": false
+    },
+    {
+      "img": "./assets/service_images/Vrstva 10.png",
+      "content": "Self Augmentation",
+      "flipped": false
+    }
+  ]
+}

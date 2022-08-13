@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,22 +8,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormPageComponent } from './form-page/form-page.component';
 
 import { FormsModule } from '@angular/forms';
-// import { AngularFireModule } from '@angular/fire';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormPageComponent
+    FormPageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -30,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

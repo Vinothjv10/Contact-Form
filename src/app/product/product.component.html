@@ -1,0 +1,14 @@
+<div *ngFor="let item of service" class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="{{item.img}}" alt="Avatar" style="width:200px;height:200px;">
+            <div>{{item.id}}</div>
+            <!-- <div>{{item.content}}</div> -->
+
+        </div>
+        <div class="flip-card-back">
+            <div>{{item.content}}</div>
+            <button>View More</button>
+        </div>
+    </div>
+</div>
