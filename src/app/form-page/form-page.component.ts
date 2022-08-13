@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-form-page',
@@ -18,7 +19,7 @@ export class FormPageComponent implements OnInit {
 
   // submitted = false;
 
-  constructor(private formbuilder: FormBuilder) { }
+  constructor(private formbuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.contactForm = this.formbuilder.group({
@@ -51,13 +52,22 @@ export class FormPageComponent implements OnInit {
     if (this.contactForm.invalid) {
       return;
     }
-    console.log(e);
+    this.http.post('http://localhost:3000/contact', e)
+      .subscribe((result) => {
+        console.warn("result", result)
+      })
+    if (this.contactForm.valid) {
+      alert(`Thank You ${this.contactForm.value.firstName}`);
+      this.contactForm.reset();
+    }
+
+
     this.isSubmit = true;
 
     this.sumbitMessage = " Sumbitted Successfully";
     setTimeout(() => {
       this.isSubmit = false;
-    }, 2000);
+    }, 4000);
 
     this.contactForm.reset();
   }

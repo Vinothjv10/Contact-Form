@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ProductComponent } from './product/product.component';
 
+// import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ProductComponent } from './product/product.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
